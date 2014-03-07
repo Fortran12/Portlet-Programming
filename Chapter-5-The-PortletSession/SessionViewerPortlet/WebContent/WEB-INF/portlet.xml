@@ -5,8 +5,7 @@
    xmlns:xsi = "http://www.w3.org/2001/XMLSchema-instance"
    xsi:schemaLocation = "
       http://java.sun.com/xml/ns/portlet/portlet-app_1_0.xsd
-      http://java.sun.com/xml/ns/portlet/portlet-app_1_0.xsd"
-   id = "examscam2.ExamScam2Portlet.1146144ee0">
+      http://java.sun.com/xml/ns/portlet/portlet-app_1_0.xsd">
 
    <portlet>
       <portlet-name>SessionViewerPortlet</portlet-name>
