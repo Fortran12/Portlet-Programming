@@ -1,0 +1,52 @@
+apply plugin: 'java'
+apply plugin: 'war'
+apply plugin: 'eclipse-wtp'
+
+configurations {
+   passemble
+}
+
+repositories {
+   mavenLocal()
+   mavenCentral()
+}
+
+dependencies {
+   passemble 'org.apache.portals.pluto:pluto-ant-tasks:2.0.3'
+}
+
+sourceSets {
+   main {
+      java {
+         srcDirs "src"
+      }
+
+      resources {
+         srcDir "src"
+      }
+   }
+}
+
+eclipse {
+  wtp {
+    component {
+      resource deployPath: '/', sourcePath: '/WebContent', tag: 'defaultRootSource'
+      resource deployPath: '/WEB-INF/classes', sourcePath: '/src'
+    }
+  }
+}
+
+task passemble {
+   description = 'Assemble project so that it may be run on Apache Pluto'
+
+   doLast {
+      println 'creating taskdef passemble...'
+      ant.taskdef(name: 'passemble', classname: 'org.apache.pluto.ant.AssembleTask', classpath: configurations.passemble.asPath)
+
+      println 'executing task passemble...'
+      ant.passemble(
+         webxml: 'web.xml',
+         portletxml: 'WebContent/WEB-INF/portlet.xml',
+         destfile: 'WebContent/WEB-INF/web.xml')
+   }
+}

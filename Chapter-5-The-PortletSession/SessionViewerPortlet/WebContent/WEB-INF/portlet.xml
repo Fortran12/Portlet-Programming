@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<portlet-app
+   xmlns = "http://java.sun.com/xml/ns/portlet/portlet-app_1_0.xsd"
+   version = "1.0"
+   xmlns:xsi = "http://www.w3.org/2001/XMLSchema-instance"
+   xsi:schemaLocation = "
+      http://java.sun.com/xml/ns/portlet/portlet-app_1_0.xsd
+      http://java.sun.com/xml/ns/portlet/portlet-app_1_0.xsd"
+   id = "examscam2.ExamScam2Portlet.1146144ee0">
+
+   <portlet>
+      <portlet-name>SessionViewerPortlet</portlet-name>
+      <display-name>SessionViewerPortlet</display-name>
+      <portlet-class>stuff.SessionViewerPortlet</portlet-class>
+
+      <supports>
+         <mime-type>text/html</mime-type>
+         <portlet-mode>view</portlet-mode>
+      </supports>
+
+      <portlet-info>
+         <title>SessionViewerPortlet</title>
+      </portlet-info>
+   </portlet>
+
+   <portlet>
+      <portlet-name>SimpleSessionPortlet</portlet-name>
+      <display-name>SimpleSessionPortlet</display-name>
+      <portlet-class>stuff.SimpleSessionPortlet</portlet-class>
+
+      <supports>
+         <mime-type>text/html</mime-type>
+         <portlet-mode>view</portlet-mode>
+      </supports>
+
+      <portlet-info>
+         <title>SimpleSessionPortlet</title>
+      </portlet-info>
+   </portlet>
+</portlet-app>
